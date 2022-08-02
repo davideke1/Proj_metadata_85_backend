@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from .models import fileUpload
 
 # Create your forms here.
 from django.forms import models
@@ -21,6 +22,7 @@ class NewUserForm(UserCreationForm):
         return user
 
 
-class UploadFileForm(forms.Form):
-    title = forms.CharField(max_length=50)
-    file = forms.FileField()
+class FileForm(forms.ModelForm):
+    class Meta:
+        model = fileUpload
+        fields = ['description', 'document']
