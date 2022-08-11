@@ -26,3 +26,8 @@ class FileForm(forms.ModelForm):
     class Meta:
         model = fileUpload
         fields = ['description', 'document']
+
+        widgets = {
+            'description' : forms.TextInput(attrs={'class': 'upload-file'}),
+            'document' : forms.FileInput(attrs={'class': 'file-submit'}),
+        }

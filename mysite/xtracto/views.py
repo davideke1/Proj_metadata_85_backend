@@ -39,6 +39,6 @@ def UploadFilea(request):
         context = {
             'form':form,
         }
-    return render(request, 'xtracto.html', context)
+    return render(request, 'xtracto/dashboard.html', context)
 
 
